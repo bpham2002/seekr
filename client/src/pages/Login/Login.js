@@ -115,9 +115,9 @@ class Trails extends Component {
                                                         {trail.author}
                                                     </strong>
                                                 </Link>
-                                                <DeleteBtn onClick={() => this.deleteTrail(Trail._id)} />
+                                                <DeleteBtn onClick={() => this.deleteTrail(trail._id)} />
                                                 <br/>
-                                                <SaveBtn onClick={()=> this.updateTrail(Trail._id, {saved: true})} />
+                                                <SaveBtn onClick={()=> this.updateTrail(trail._id, {saved: true})} />
                                             </ListItem>
                                         )
                                     }
@@ -135,10 +135,10 @@ class Trails extends Component {
                         {this.state.Trails.length ? (
                             <List>
                                 {this.state.trails.map(trail => {
-                                    if (Trail.saved) {
+                                    if (trail.saved) {
                                         return (
-                                            <ListItem key={Trail._id}>
-                                                <Link to={"/trails/" + Trail._id}>
+                                            <ListItem key={trail._id}>
+                                                <Link to={"/trails/" + trail._id}>
                                                     <strong>
                                                         {trail.title}
                                                         <br />
